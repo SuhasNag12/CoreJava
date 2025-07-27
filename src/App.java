@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
@@ -25,5 +27,28 @@ public class App {
         System.out.println("My name is: " + name);
         System.out.println("I have a gpa of " + gpa + " and I am an admin.");
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your Name: ");
+        String userName = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int userAge = scanner.nextInt();
+
+        System.out.print("Enter your GPA: ");
+        double userScore = scanner.nextDouble();
+
+        System.out.print("Are you an Admin (true/false): ");
+        boolean userIsAdmin = scanner.nextBoolean();
+
+        System.out.println("Welcome " + userName);
+        System.out.println("Your age is: " + userAge + "\nYou have scored: " + userScore);
+        if (userIsAdmin) {
+
+            System.out.println("User is an Admin");
+        } else {
+
+            System.out.println("User is an Admin");
+        }
+        scanner.close();
     }
 }
