@@ -1,32 +1,20 @@
+// Below Program utilises Ternary COndition for Conversion of Temp
 
-// This program converts KG to Pounds or Pounds to KG based on user input:
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double kgWeight;
-        double lbsWeight;
-        double convertedWeight = 0.00;
+        System.out.print("Enter the temperature: ");
+        double inputTemp = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.print("Convert to Farenheit or Celcius (f or c): ");
+        String inputConversionUnit = scanner.nextLine();
 
-        System.out.println("Welcome to Weight Conversion Program: ");
-        System.out.println("1: Convert Lbs to KG");
-        System.out.println("2: Convert KG to Lbs");
-        System.out.print("Enter Your Choice (1 or 2): ");
-        int userInput = scanner.nextInt();
-        if (userInput == 1) {
-            System.out.print("Enter the Weight in Lbs: ");
-            lbsWeight = scanner.nextDouble();
-            convertedWeight = lbsWeight * 0.453592;
-        } else if (userInput == 2) {
-            System.out.print("Enter the Weight in Kgs: ");
-            kgWeight = scanner.nextDouble();
-            convertedWeight = kgWeight * 2.20462;
-        } else {
-            System.out.println("You have entered wrong Choice, Restart the Program");
+        double result = inputConversionUnit.equalsIgnoreCase("f") ? (inputTemp * (9.0 / 5.0)) + 32
+                : inputConversionUnit.equalsIgnoreCase("c") ? (inputTemp - 32) * (5.0 / 9.0) : 0.00;
 
-        }
-        System.out.printf("Converted Weight is: %.2f", convertedWeight);
+        System.out.println("Converted Temp: " + result);
         scanner.close();
     }
 }
