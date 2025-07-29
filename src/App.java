@@ -1,22 +1,13 @@
 public class App {
     public static void main(String[] args) {
-        Person person = new Person("Suhas", "Nag");
-        person.showDetails();
+        Dog dog = new Dog();
+        dog.move("dog");
+        Cat cat = new Cat();
 
-        Student student = new Student("Vinay", "Prasad", 4.66);
-        student.showDetailsStudent();
+        cat.move("cat");
 
-        Employee employee = new Employee("Kishore", "Kumar", 46000);
+        Fish fish = new Fish();
+        fish.move("fish");
 
-        employee.salary();
-
-        Employee listEmployee[] = new Employee[3];
-
-        listEmployee[0] = new Employee("Person", "5", 12000);
-        listEmployee[1] = new Employee("Person", "6", 13000);
-        listEmployee[2] = new Employee("Person", "7", 15000);
-        for (Employee individualEmployee : listEmployee) {
-            individualEmployee.salary();
-        }
     }
 }
