@@ -1,22 +1,31 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<String> foods = new ArrayList<>();
-        System.out.print("Enter the number of food items that needs to be stored in an array: ");
-        int num = scanner.nextInt();
-        scanner.nextLine();
-
-        for (int i = 1; i <= num; i++) {
-            System.out.print("Enter the item number " + i + ": ");
-            String food = scanner.nextLine();
-            foods.add(food);
+        String filePath = "test.txt";
+        String textContent = """
+                My Name is Suhas Nag.
+                I like to code.
+                My favourite food is Fried Chicken.
+                Test this document.
+                """;
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(textContent);
+            System.out.println("Successfuly Created.");
+        } catch (Exception e) {
+            System.out.println("Something Went Wrong!");
         }
 
-        System.out.println("Final List of food items: " + foods);
-
-        scanner.close();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println("Success!!!");
+        } catch (Exception e) {
+            System.out.println("Something went Wrong!!");
+        }
     }
 }
