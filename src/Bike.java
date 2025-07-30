@@ -1,5 +1,6 @@
 public class Bike extends Vehicle {
-    void go(){
+    @Override
+    void go() {
         System.out.println("You are riding a bike.");
     }
 }
