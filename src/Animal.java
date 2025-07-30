@@ -1,3 +1,3 @@
-public interface Animal {
-    void eat();
+public abstract class Animal {
+    abstract void speak();
 }

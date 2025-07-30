@@ -1,23 +1,27 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        Car car = new Car();
-        Bike bike = new Bike();
-        Boat boat = new Boat();
-        Vehicle vehicles[] = { car, bike, boat };
-
-        for (Vehicle vehicle : vehicles) {
-            vehicle.go();
+        Scanner scanner = new Scanner(System.in);
+        int userInput;
+        Animal animal;
+        System.out.print("Enter your choice for Dog or Cat (1 = Dog and 2 = Cat): ");
+        userInput = scanner.nextInt();
+        switch (userInput) {
+            case 1: {
+                animal = new Dog();
+                animal.speak();
+                break;
+            }
+            case 2: {
+                animal = new Cat();
+                animal.speak();
+                break;
+            }
+            default:
+                System.out.println("Error!! Invalid Input.");
+                break;
         }
-        System.out.println("**********************************");
-        Cat cat = new Cat();
-        Dog dog = new Dog();
-        Sheep sheep = new Sheep();
-
-        Animal animals[] = { cat, dog, sheep };
-
-        for (Animal animal : animals) {
-            animal.eat();
-        }
-
+        scanner.close();
     }
 }
