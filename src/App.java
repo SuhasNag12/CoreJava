@@ -1,9 +1,22 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        Car car = new Car("Corvette Stingray", 230000, "6.2L LT2 V8");
-        System.out.println("My car name is " + car.name + " I bought it for " + car.price
-                + ". It is having an engine of type: " + car.engine.type);
-        car.engine.start();
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> foods = new ArrayList<>();
+        System.out.print("Enter the number of food items that needs to be stored in an array: ");
+        int num = scanner.nextInt();
+        scanner.nextLine();
 
+        for (int i = 1; i <= num; i++) {
+            System.out.print("Enter the item number " + i + ": ");
+            String food = scanner.nextLine();
+            foods.add(food);
+        }
+
+        System.out.println("Final List of food items: " + foods);
+
+        scanner.close();
     }
 }
